@@ -4,13 +4,13 @@
 ## lucidmanager.org/data-science
 ## Dr Peter Prevos
 
-read_gedcom_ind <- function(gedcom_loc,encoding="UTF-8") {
+read_gedcom_ind <- function(gedcom_loc) {
     library(stringr)
     library(tibble)
     library(dplyr)
 
     #gedcom <- str_squish(readLines(gedcom_loc))
-    gedcom <- str_squish(readLines(gedcom_loc,encoding=encoding)) #dvd
+    gedcom <- str_squish(readLines(gedcom_loc,encoding="UTF-8")) #dvd
     #gedcom <- str_squish(readLines(file(gedcom_loc,encoding="UTF-8"))) #dvd
     tail(gedcom) #dvd
     idv <- sum(grepl("^0.*INDI$", gedcom))
